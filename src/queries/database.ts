@@ -1,0 +1,1 @@
+export const insertExecution = `INSERT INTO executions (id, timestamp, commands, result, duration) VALUES ($1, $2, $3, $4, $5) RETURNING *`;
