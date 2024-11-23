@@ -23,6 +23,10 @@ export const saveToDatabase = async (request: Request): Promise<any> => {
     const startTime = process.hrtime();
     const robot = new Robot(start?.x, start?.y);
 
+    if (commands.length >= 10000 || commands.length <= 0) {
+        throw new Error('Invalid commands');
+    }
+
     for (let i = 0; i < commands.length; i++) {
         robot.move(commands[i].direction, commands[i].steps);
     }
