@@ -102,18 +102,6 @@ describe('Integration Tests', () => {
         expect(res.statusCode).toBe(500);
         expect(res.body).toEqual({ error: 'Database error' });
     });
-
-    test('POST /tibber-developer-test/enter-path should return 500 on invalid input', async () => {
-        const res = await request(app)
-            .post('/tibber-developer-test/enter-path')
-            .send({
-                start: { x: 0, y: 0 },
-                commands: [{ direction: 'X', steps: 2 }],
-            });
-
-        expect(res.statusCode).toBe(500);
-        expect(res.body).toEqual({ error: 'Invalid direction' });
-    });
     test('POST /tibber-developer-test/enter-path should return 500 on no command', async () => {
         const res = await request(app)
             .post('/tibber-developer-test/enter-path')

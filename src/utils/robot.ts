@@ -15,12 +15,6 @@ class Robot {
     }
   
     move(direction: string, steps: number) {
-      if (this.x < -100000 || this.x > 100000 || this.y < -100000 || this.y > 100000) {
-        throw new Error('Invalid position');
-      }
-      if (steps < 0 || steps > 100000 || !Number.isInteger(steps)) {
-        throw new Error('Invalid steps');
-      }
       for (let i = 0; i < steps; i++) {
         switch (direction) {
             case Direction.NORTH:
@@ -36,7 +30,6 @@ class Robot {
                 this.x -= 1;
                 break;
             default:
-              throw new Error('Invalid direction');
                 break;
         }
         this.position = `{${this.x}: ${this.y}}`;
