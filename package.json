@@ -4,6 +4,8 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "jest --testMatch '**/*.spec.ts'",
+    "test:integration": "jest src/tests/integration",
+    "test:unit": "jest src/tests/robot",
     "dev": "npx knex migrate:latest && nodemon src/index.ts",
     "build": "tsc"
   },
