@@ -7,7 +7,8 @@ The **Robot Cleaner** project simulates the movement and cleaning process of a r
 
 ## Requirements
 - **Node.js**: Version 18.x
-- **Docker**: Installed for containerized execution (optional)
+- **Docker**: Installed for containerized execution
+- **local Postgres or Postgres Docker Container**
 
 ---
 
@@ -27,11 +28,11 @@ npm run dev
 ### 2. Run with Docker
 1. Build the Docker image:
    ```bash
-   docker-compose build
+   docker compose build
    ```
 2. Start the Docker container:
    ```bash
-   docker-compose up
+   docker compose up
    ```
 3. The project will be accessible at:
    ```plaintext
@@ -40,12 +41,19 @@ npm run dev
 
 ---
 
-## Running Tests
-To execute the test suite:
+## Running Integration and Unit Tests
+To execute all test suites:
 ```bash
 npm run test
 ```
-
+To execute integration test suites only:
+```bash
+npm run test:integration
+```
+To execute unit test suites only:
+```bash
+npm run test:unit
+```
 ---
 
 ## Project Structure
@@ -84,3 +92,7 @@ npm run test
 - **Database Ready**: Includes database interaction logic with queries and migrations.
 - **Testing**: Comprehensive tests to ensure stability and correctness.
 - **Containerization**: Dockerized setup for easy deployment and consistent environments.
+
+## Optimization(TODO)
+- High load and high concurrency performance
+- Security
